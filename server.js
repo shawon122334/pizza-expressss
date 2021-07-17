@@ -21,7 +21,6 @@ connection.once('open', () => {
     console.log('Connection failed...')
 });
 
-
 // Session store
 let mongoStore = new MongoDbStore({
                 mongooseConnection: connection,
@@ -40,7 +39,14 @@ app.use(session({
     saveUninitialized: false,
     cookie: { maxAge: 1000 * 60 * 60 * 24 } // 24 hour
 }))
-
+// //session config 
+// app.use(session(){
+//     secret: process.env.COOKIE_SECRET,
+//     resave: false,
+//     store : mongoStore,
+//     saveUninitialized: false,
+//     cookie : {maxAge: 1000 * 60 * 60 * 24} //24 hour
+// })
 // Passport config
 const passportInit = require('./app/config/passport')
 passportInit(passport)
