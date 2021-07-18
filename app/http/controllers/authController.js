@@ -33,7 +33,7 @@ function authController() {
                         req.flash('error', info.message ) 
                         return next(err)
                     }
-
+  
                     return res.redirect(_getRedirectUrl(req))
                 })
             })(req, res, next)
@@ -49,7 +49,7 @@ function authController() {
              req.flash('name', name)
              req.flash('email', email)
             return res.redirect('/register')
-         }
+         } 
 
          // Check if email exists 
          User.exists({ email: email }, (err, result) => {
