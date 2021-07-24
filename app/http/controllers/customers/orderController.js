@@ -14,6 +14,7 @@ function orderController () {
                 customerId: req.user._id,
                 items: req.session.cart.items,
                 phone,
+                // address
                 address
             })
             order.save().then(result => {
@@ -46,7 +47,7 @@ function orderController () {
                         })
                     } else {
                         delete req.session.cart
-                        return res.json({ message : 'Order placed succesfully' });
+                        return res.json({ message : 'Order placed successfully' });
                     }
                 })
             }).catch(err => {
@@ -70,5 +71,6 @@ function orderController () {
         }
     }
 }
+
 
 module.exports = orderController

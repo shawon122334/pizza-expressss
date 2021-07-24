@@ -33,12 +33,12 @@ addToCart.forEach((btn) => {
     })
 })
 
-// Remove alert message after X seconds
+// Remove alert message after some seconds
 const alertMsg = document.querySelector('#success-alert')
 if(alertMsg) {
     setTimeout(() => {
         alertMsg.remove()
-    }, 2000)
+    }, 3000)
 }
 
 
