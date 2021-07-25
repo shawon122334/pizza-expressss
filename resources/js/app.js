@@ -1,3 +1,4 @@
+
  import axios from 'axios'
  import Noty from 'noty'
  import { initAdmin } from './admin'
@@ -33,12 +34,12 @@ addToCart.forEach((btn) => {
     })
 })
 
-// Remove alert message after some seconds
+// Remove alert message after X seconds
 const alertMsg = document.querySelector('#success-alert')
 if(alertMsg) {
     setTimeout(() => {
         alertMsg.remove()
-    }, 3000)
+    }, 2000)
 }
 
 
@@ -79,7 +80,7 @@ initStripe()
 
 // Socket
 let socket = io()
-
+// initAdmin(socket)
 // Join
 if(order) {
     socket.emit('join', `order_${order._id}`)
@@ -103,4 +104,3 @@ socket.on('orderUpdated', (data) => {
         progressBar: false,
     }).show();
 })
-
