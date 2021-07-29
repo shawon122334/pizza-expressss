@@ -2231,6 +2231,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+ //  import { initStripe } from './stripe'
 
 
 var addToCart = document.querySelectorAll('.add-to-cart');
@@ -2370,6 +2371,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//stripe payment
 
 
 
@@ -2385,7 +2387,7 @@ function _initStripe() {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return (0,_stripe_stripe_js__WEBPACK_IMPORTED_MODULE_1__.loadStripe)('pk_test_51Hf6vbDfWW6uHRy7b6Upoa4bWhGYmk2ElEN4AiFeqozzlccU6OpAoD9d1oIar3qg9i8ASiOs9ly4rFJQOTPM5MMk00GN7COA2N');
+            return (0,_stripe_stripe_js__WEBPACK_IMPORTED_MODULE_1__.loadStripe)('pk_test_51JHx7wIx56Rd3wotQxEUeL7yc5iFq8VkRMAL5h1yu5KaaF3mT1rSQBChw90XqjBrqpF2xMEHdzgUZthic4etxWB100S90dTshP');
 
           case 2:
             stripe = _context2.sent;

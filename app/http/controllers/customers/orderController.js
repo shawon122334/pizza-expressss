@@ -5,6 +5,7 @@ function orderController () {
     return {
         store(req, res) {
             // Validate request
+            // const { phone, address, stripeToken, paymentType } = req.body
             const { phone, address, stripeToken, paymentType } = req.body
             if(!phone || !address) {
                 return res.status(422).json({ message : 'All fields are required' });
@@ -20,12 +21,13 @@ function orderController () {
                 Order.populate(result, { path: 'customerId' }, (err, placedOrder) => {
                     // req.flash('success', 'Order placed successfully')
 
-                    // Stripe payment
+                    
+                    //stripe payment 
                     if(paymentType === 'card') {
                         stripe.charges.create({
                             amount: req.session.cart.totalPrice  * 100,
                             source: stripeToken,
-                            currency: 'inr',
+                            currency: 'usd',
                             description: `Pizza order: ${placedOrder._id}`
                         }).then(() => {
                             placedOrder.paymentStatus = true

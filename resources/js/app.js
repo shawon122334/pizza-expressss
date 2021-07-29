@@ -3,6 +3,7 @@
  import Noty from 'noty'
  import { initAdmin } from './admin'
  import moment from 'moment'
+//  import { initStripe } from './stripe'
  import { initStripe } from './stripe'
 
 let addToCart = document.querySelectorAll('.add-to-cart')

@@ -31,6 +31,7 @@ export class CardWidget {
        this.card.destroy()
     }
 
+    
     async createToken() {
         try {
             const result = await this.stripe.createToken(this.card)
